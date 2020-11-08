@@ -1,5 +1,6 @@
 # FoodBuddy
 
+
 Original App Design Project - README Template
 ===
 
@@ -68,7 +69,6 @@ Additionally they user will have a shooping list note section for reminding them
     => Detailed view of items
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
 <img src="https://github.com/https-github-com-elisee10/FindMyRecipe/blob/main/Note%20Nov%207%2C%202020.pdf" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
