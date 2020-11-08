@@ -1,4 +1,5 @@
-#FoodBuddy
+
+## FoodBuddy
 
 Original App Design Project - README Template
 ===
