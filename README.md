@@ -1,5 +1,4 @@
-# FoodBuddy
-
+#FoodBuddy
 
 Original App Design Project - README Template
 ===
@@ -8,7 +7,7 @@ Original App Design Project - README Template
 
 ## Overview
 
-This food recipe app will let user find varities of food recipies, user can click on the food they would like, and they can view a video or get details on that food.
+This food recipe app will let users find varieties of food recipes, user can click on the food they would like, and they can view a video or get details on that food.
 
 ### Description
 [Recipe finder app]
@@ -69,8 +68,8 @@ Additionally they user will have a shooping list note section for reminding them
     => Detailed view of items
 
 ## Wireframes
-Click icon for image
-<img src="https://github.com/https-github-com-elisee10/FindMyRecipe/blob/main/Note%20Nov%207%2C%202020.pdf" width=600>
+
+<img src="https://github.com/https-github-com-elisee10/FindMyRecipe/blob/main/Note%20Nov%207%2C%202020.pdf" >
 
 ### [BONUS] Digital Wireframes & Mockups
 
