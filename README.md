@@ -1,1 +1,1 @@
-# FindMyRecipe
+# FoodBuddy
