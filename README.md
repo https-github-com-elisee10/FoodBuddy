@@ -6,8 +6,11 @@ Original App Design Project - README Template
 
 ## Table of Contents
 
-## Overview
+## Authors		
+Élisée D.
+Nabin B.
 
+## Overview
 This food recipe app will let users find varieties of food recipes, user can click on the food they would like, and they can view a video or get details on that food.
 
 ### Description
