@@ -1,6 +1,3 @@
-
-## FoodBuddy
-
 Original App Design Project - README Template
 ===
 
@@ -10,6 +7,7 @@ Original App Design Project - README Template
 Élisée D. <=> Nabin B.
 
 ## Overview
+
 This food recipe app will let users find varieties of food recipes, user can click on the food they would like, and they can view a video or get details on that food.
 
 ### Description
@@ -72,9 +70,26 @@ Additionally they user will have a shooping list note section for reminding them
 
 ## Wireframes
 
-<img src="https://github.com/https-github-com-elisee10/FindMyRecipe/blob/main/Note%20Nov%207%2C%202020.pdf" >
+![wireframe](https://github.com/Norbeen/source/blob/main/Screen%20Shot%202020-11-09%20at%206.54.24%20PM.png?raw=true "wireframe")
+
+
+![wireframe](https://github.com/Norbeen/source/blob/main/Screen%20Shot%202020-11-09%20at%206.54.36%20PM.png?raw=true "wireframe")
+
+![wireframe](https://github.com/Norbeen/source/blob/main/Screen%20Shot%202020-11-09%20at%206.54.42%20PM.png?raw=true "wireframe")
+
+
 
 ### [BONUS] Digital Wireframes & Mockups
+
+![appFront](https://github.com/Norbeen/source/blob/main/Screen%20Shot%202020-11-09%20at%206.19.12%20PM.png?raw=true "appFront")
+
+![search](https://github.com/Norbeen/source/blob/main/Screen%20Shot%202020-11-09%20at%206.19.23%20PM.png?raw=true "search")
+
+![trending](https://github.com/Norbeen/source/blob/main/Screen%20Shot%202020-11-09%20at%206.19.34%20PM.png?raw=true "trending")
+
+![profile](https://github.com/Norbeen/source/blob/main/Screen%20Shot%202020-11-09%20at%206.19.44%20PM.png?raw=true "profile")
+
+![detail](https://github.com/Norbeen/source/blob/main/Screen%20Shot%202020-11-09%20at%206.19.54%20PM.png?raw=true "detail")
 
 ### [BONUS] Interactive Prototype
 
