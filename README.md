@@ -1,4 +1,4 @@
-Original App Design Project - FoodBuddy
+Original App Design Project - README Template
 ===
 
 ## Table of Contents
@@ -32,29 +32,83 @@ Additionally they user will have a shooping list note section for reminding them
 
 **Required Must-have Stories**
 
-*  [User can create a new account]
-*  [User can login]
-*  [User can search for recipe by ingredient]
-*  [User can save the ingredient]
-*  [User can view a feed of random recipes]
-*  [User can view description of the food]
-*  [User can find a video link to make the recipe]
+* [User can register for an account]
+* [User can see food buddy(app) logo]
+* [User can login]
+* [User can see food-buddy logo]
+* [User can click on register button]
+* [User can search for a recipe]
+* [User can click search button]
+* [User can click recipe for detail]
+* [User can see varieties of recipies]
+* [User can see random food recipes]
+* [User can see three navigation buttons]
+* [Each navigation button contains search bar, random food recipe and profile]
+* [User can see a search bar at the top]
+* [User can type in food name]
+* [User can click search button]
+* [User can see the title, image and description of items]
+* [User can automatically see random recipes]
+* [User can click on the recipes]
+* [User can see a detail page on the recipe]
+* [User can see their own profile]
+* [User can save their favorite recipe]
+* [User can see the recipe for the item in detailed view] 
 
 **Optional Nice-to-have Stories**
 
-* [User can add their own recipes]
+* [User can add their own recipes] 
 * [User can upload thier vides on how to make recipes]
 * [User can like and share other peoples recipe]
 
 
 ### 2. Screen Archetypes
 
-* Login- User signs up or logs into their account
-* Register - User can register for a new account
-* Stream- User can stream varities of food 
-* Detail- User can have a detailed view of food of their choice
+* Registration Screen
+    * User signs register for an account
+    * User can see food buddy(app) logo
+    
+* Login Screen
+    * User can login
+    * User can see food-buddy logo
+    * User can click on register button
+    
+* Home Screen
+    * User can search for a recipe
+    * User can click search button
+    * User can click recipe for detail
+    * User can see varieties of recipies
+    * User can see random food recipes
+    * User can see three navigation buttons
+    * Each navigation button contains search bar, random food recipe and profile
 
+* Search Screen
+    * User can see a search bar at the top
+    * User can type in food name
+    * User can click search button
+    * User can see varities of recipe 
+    * User can see the title, image and description of items
+    * User can click the items to see a detailed view
+
+* Trending Screen
+    * User can automatically see random recipes
+    * User can click on the recipes
+    * User can see a detail page on the recipe
+
+* Profile Screen
+    * User can see their own profile
+    * User can save their favorite recipe
+    
+* Detail Screen
+    * User can click an item to see the details
+    * User can see the title, image and description of the items
+    * User can see the recipe for the item 
+    
 ### 3. Navigation
+
+**Tab Navigation** (Tab to Screen)
+* Search for food
+* Logout
 
 
 **Flow Navigation** (Screen to Screen)
@@ -63,8 +117,12 @@ Additionally they user will have a shooping list note section for reminding them
      => Home
 * Registration Screen
     => Home
-* Stream Screen
+* Search Screen
     => List of food items 
+* Trending Screen
+    => List of food items
+* Profile Screen
+    => List of saved items
 * Detail Screen
     => Detailed view of items
 
@@ -95,9 +153,46 @@ Additionally they user will have a shooping list note section for reminding them
 
 ## Schema 
 [This section will be completed in Unit 9]
+
 ### Models
-[Add table of models]
+
+  | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | Username     | String   |  Text to store the name of the user |
+   | title | String| title of the recipe |
+   | image         | String    | image of selected recipe|
+   |description    | String    | description of recipe|
+   
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+* Search Screen (create/GET) 
+    * (GET) the recipe image, title and description of searched item
+    * (GET) the how to make description of searched food item
+    * (POST) the title, image and detailed description of how to make recipe
+
+* Trending Screen (create/GET)
+    * (GET) the title, image and description of the recipe randomly
+    * (GET) the how to make description of random recipe displayed
+    * (POST) the title, image and detailed description of how to make recipe
+     
+* Profile Screen(create/GET )
+    * (GET) the title, image and description of saved items
+
+
+* Saving the title, image and description 
+   
+
+    * private void savePost(String title, String image, ParseUser currentUser, String ingredient, String description) {
+    * Post post = new Post();
+    * post.setUser(currentUser);
+    * post.setTitle(title);
+    * post.setDescription(description);
+    * post.setImage(image);
+    * post.setIngredient(ingredient);
+    * post.saveInBackground(new SaveCallback() {
+                
+
+
+
+#### [OPTIONAL:] Existing API Endpoints
+
