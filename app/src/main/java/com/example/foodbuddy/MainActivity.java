@@ -3,6 +3,7 @@ package com.example.foodbuddy;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -35,11 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-   
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -48,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 //      FirebaseApp.initializeApp(this);
-
 
 
 
@@ -64,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-
         signInButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -94,13 +87,19 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
-            if (resultCode != RESULT_CANCELED){
-                if (requestCode == RC_SIGN_IN){
-                    Task<GoogleSignInAccount> task  =  GoogleSignIn.getSignedInAccountFromIntent(data);
+            if (resultCode != RESULT_CANCELED) {
+                if (requestCode == RC_SIGN_IN) {
+                    Log.v("test", "sign in return");
+                    Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
                     handleSignInResult(task);
+                } else {
+                    Log.v("test", "sign in returned but had  result_canceled");
+                }
             }
         }
-    }
+
+
+
 
 
 
@@ -114,33 +113,23 @@ public class MainActivity extends AppCompatActivity {
 
     catch( ApiException e)  {
         Toast.makeText(MainActivity.this, "Signed In Failed!", Toast.LENGTH_SHORT).show();
-        //FirebaseGoogleAuth(null);
+        FirebaseGoogleAuth(null);
     }
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
     private void  FirebaseGoogleAuth(GoogleSignInAccount acc) {
-//        AuthCredential authCredential = GoogleAuthProvider.getCredential(acc.getIdToken(), null);
         AuthCredential authCredential = GoogleAuthProvider.getCredential(acc.getIdToken(), null);
-        mAuth.signInWithCredential(authCredential).addOnCompleteListener(this,
-                new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithCredential(authCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(MainActivity.this, "Successful!", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
+
                         } else {
                             Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                             updateUI(null);
@@ -151,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void updateUI(FirebaseUser user){
         btnSignOut.setVisibility(View.VISIBLE);
+        signInButton.setVisibility(View.INVISIBLE);
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if (account  != null){
             String personName = account.getDisplayName();
