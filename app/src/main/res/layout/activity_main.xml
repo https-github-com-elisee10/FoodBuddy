@@ -1,31 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:background="@color/backgroundColor"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
+    <ImageView
+        android:id="@+id/iv_profile_pic_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="308dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/ic_launcher_round" />
+
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_profile_pic_user"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Welcome"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tv_your_email_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_welcome"
+        android:layout_marginTop="50dp"
+        android:text="email Address: " />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_email_address"
+        android:layout_toRightOf="@+id/tv_your_email_address"
+        android:layout_below="@+id/tv_welcome"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:text="dummy@me.com" />
+
+
 
     <Button
-        android:id="@+id/sign_out_button"
         android:layout_width="wrap_content"
+        android:text="Log Out"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:background="@color/buttonColor"
         android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:text="Sign Out"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
+        android:layout_below="@+id/tv_your_email_address"
+        android:layout_marginTop="50dp"
+        android:id="@+id/btn_logout"/>
+</RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+<!--Back UP-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".MainActivity">-->
+
+
+<!--    <com.google.android.gms.common.SignInButton-->
+<!--        android:id="@+id/sign_in_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="140dp"-->
+<!--        android:layout_marginTop="308dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/sign_out_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="34dp"-->
+<!--        android:text="Sign Out"-->
+<!--        android:visibility="invisible"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />-->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <!--Profile image on app open-->
+
+    <ImageView
+        android:id="@+id/iv_profile_pic_signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/ic_launcher_round"/>
+
+    <!--    Email Box-->
+
+    <EditText
+        android:id="@+id/et_email_signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_profile_pic_signin"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/edittext_background"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+    <!--    Password box-->
+
+    <EditText
+        android:id="@+id/et_pass_signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_email_signin"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/edittext_background"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+
+
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_pass_signin"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/tv_signin_signin"
+        android:text="Login" />
+
+    <RelativeLayout
+        android:id="@+id/rl_signin_signin"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/tv_signin_signin"
+        android:background="@drawable/custom_shape_background"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:text="or"
+            android:id="@+id/tv_signin_or"/>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearance"
+            android:layout_toRightOf="@id/tv_signin_or"
+            android:text="Sign Up"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/tv_signin_signin"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="50dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/iv_signin_google"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/circle_background"
+            android:padding="8dp"
+            android:src="@drawable/ic_google_symbol" />
+
+    </LinearLayout>
+
+
+
+    <!--    <include-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+
+    <!--        android:layout_marginLeft="6dp"-->
+    <!--        android:layout_marginTop="100dp" />-->
+</RelativeLayout>
