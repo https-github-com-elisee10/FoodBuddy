@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (account!= null){
 
-            tv_email_address.setText(account.getEmail());
+            tv_email_address.setText("logged in");
         }
 
         btn_logout.setOnClickListener(new View.OnClickListener() {

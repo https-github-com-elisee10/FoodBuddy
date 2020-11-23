@@ -32,8 +32,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        mEtEmail = findViewById(R.id.et_email_signup);
-        mEtPassword = findViewById(R.id.et_pass_signup);
+        mEtEmail = findViewById(R.id.et_email_signin);
+        mEtPassword = findViewById(R.id.et_pass_signin);
         mTvLogin = findViewById(R.id.tv_signin_signin);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -42,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         mTvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 String email = mEtEmail.getText().toString();
                 String pass = mEtPassword.getText().toString();
 
@@ -52,7 +54,8 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 //Sign in complete
-                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
                                 finish();
                             } else {
                                 //Something went wrong
@@ -64,9 +67,6 @@ public class LoginActivity extends AppCompatActivity {
                             .addOnFailureListener(e -> Toast.makeText(LoginActivity.this, "Error: " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show())
 
                             .addOnCanceledListener(() -> Toast.makeText(LoginActivity.this, "Cancelled!", Toast.LENGTH_SHORT).show());
-
-                } else {
-                    Toast.makeText(LoginActivity.this, "Please Enter values!", Toast.LENGTH_SHORT).show();
 
                 }
             }
