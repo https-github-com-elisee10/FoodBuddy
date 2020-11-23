@@ -81,23 +81,23 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="16dp"
-        android:text="or"
-        android:id="@+id/tv_signup_or"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:text="or"
+            android:id="@+id/tv_signup_or"/>
 
-    <TextView
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:textAppearance"
-        android:layout_toRightOf="@id/tv_signup_or"
-       android:text="Sign Up"/>
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearance"
+            android:layout_toRightOf="@id/tv_signup_or"
+            android:text="Sign Up"/>
 
     </RelativeLayout>
 
@@ -110,23 +110,23 @@
         android:layout_height="wrap_content">
 
 
-    <ImageView
-        android:id="@+id/iv_signup_google"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginRight="35dp"
-        android:background="@drawable/circle_background"
-        android:padding="8dp"
-        android:src="@drawable/ic_google_symbol" />
+        <ImageView
+            android:id="@+id/iv_signup_google"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/circle_background"
+            android:padding="8dp"
+            android:src="@drawable/ic_google_symbol" />
 
     </LinearLayout>
 
 
 
     <!--    <include-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
 
-<!--        android:layout_marginLeft="6dp"-->
-<!--        android:layout_marginTop="100dp" />-->
+    <!--        android:layout_marginLeft="6dp"-->
+    <!--        android:layout_marginTop="100dp" />-->
 </RelativeLayout>

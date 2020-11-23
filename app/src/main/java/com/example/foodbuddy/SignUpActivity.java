@@ -58,38 +58,38 @@ public class SignUpActivity extends AppCompatActivity {
 
                             //Performing sign up now
                             mFirebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()) {
-                                    //user created!
-                                    startActivity(new Intent(SignUpActivity.this, MainActivity.class));
-                                    finish();
-                                }else {
-                                    //Something went wrong
-                                    Toast.makeText(SignUpActivity.this, "Check and TRy again", Toast.LENGTH_SHORT).show();
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if(task.isSuccessful()) {
+                                        //user created!
+                                        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                                        finish();
+                                    }else {
+                                        //Something went wrong
+                                        Toast.makeText(SignUpActivity.this, "Check and TRy again", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        }).addOnFailureListener(new OnFailureListener(){
-                            @Override
-                            public void onFailure(@NonNull Exception e){
-                                //Failed
-                                Toast.makeText(SignUpActivity.this,"Error: " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            }).addOnFailureListener(new OnFailureListener(){
+                                @Override
+                                public void onFailure(@NonNull Exception e){
+                                    //Failed
+                                    Toast.makeText(SignUpActivity.this,"Error: " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
-                               }
+                                }
 
-                        })
-                        .addOnCanceledListener(new OnCanceledListener() {
-                            @Override
-                            public void onCanceled() {
-                                Toast.makeText(SignUpActivity.this, "Please fill all all the values", Toast.LENGTH_SHORT).show();
+                            })
+                                    .addOnCanceledListener(new OnCanceledListener() {
+                                        @Override
+                                        public void onCanceled() {
+                                            Toast.makeText(SignUpActivity.this, "Please fill all all the values", Toast.LENGTH_SHORT).show();
 
-                            }
-                        });
+                                        }
+                                    });
 
 
                         }else{
                             //Password length too short according to firebase recommendation
-                            Toast.makeText(SignUpActivity.this,"Canceled, try again!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this,"Too short, try again!", Toast.LENGTH_SHORT).show();
                         }
 
 
