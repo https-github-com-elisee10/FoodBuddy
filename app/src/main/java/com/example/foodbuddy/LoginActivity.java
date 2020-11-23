@@ -34,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
     mEtPassword = findViewById(R.id.et_pass_signup);
     mTvLogin = findViewById(R.id.tv_signin_signin);
 
+    mFirebaseAuth = FirebaseAuth.getInstance();
+
 
     mTvLogin.setOnClickListener(new View.OnClickListener() {
                                     @Override
