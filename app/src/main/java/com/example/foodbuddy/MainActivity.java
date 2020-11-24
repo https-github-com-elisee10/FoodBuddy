@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     Button btn_logout;
-    TextView tvEmailId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn_logout = findViewById(R.id.btn_logout);
-        tvEmailId = findViewById(R.id.tvEmailId);
+
 
 
         //get google informations
