@@ -2,19 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor">
+    android:background="@drawable/background">
 
     <!--Profile image on app open-->
-
-    <ImageView
-        android:id="@+id/iv_profile_pic_signin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:src="@mipmap/ic_launcher_round"/>
-
-    <!--    Email Box-->
 
     <EditText
         android:id="@+id/et_email_signin"
@@ -30,7 +20,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp" />
 
-    <!--    Password box-->
+    <!--    Email Box-->
 
     <EditText
         android:id="@+id/et_pass_signin"
@@ -44,58 +34,26 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10dp" />
 
+    <!--    Password box-->
 
-
-
-
-    <TextView
-
+    <ImageView
+        android:id="@+id/iv_profile_pic_signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_pass_signin"
-        android:textAppearance="?android:textAppearanceLarge"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:id="@+id/tv_signin_signin"
-        android:text="Login" />
-
-    <RelativeLayout
-        android:id="@+id/rl_signin_signin"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/tv_signin_signin"
-        android:background="@drawable/custom_shape_background"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp">
+        android:src="@mipmap/ic_launcher_round" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:text="or"
-            android:id="@+id/tv_signin_or"/>
-
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearance"
-            android:layout_toRightOf="@id/tv_signin_or"
-            android:text="Sign Up"/>
-
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tv_signin_signin"
         android:layout_alignParentEnd="true"
         android:layout_margin="50dp"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal">
 
 
         <ImageView
@@ -109,6 +67,44 @@
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/rl_signin_signin"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_signin_signin"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/custom_shape_background">
+
+        <TextView
+            android:id="@+id/tv_signin_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:text="or" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/tv_signin_or"
+            android:text="Sign Up"
+            android:textAppearance="?android:textAppearance" />
+
+    </RelativeLayout>
+
+    <TextView
+
+        android:id="@+id/tv_signin_signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_pass_signin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Login"
+        android:textAppearance="?android:textAppearanceLarge" />
 
 
     <!--    <include-->

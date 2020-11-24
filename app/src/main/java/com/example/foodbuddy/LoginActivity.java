@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -29,9 +31,6 @@ public class LoginActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_login);
 
-
-
-
         mEtEmail = findViewById(R.id.et_email_signin);
         mEtPassword = findViewById(R.id.et_pass_signin);
         mTvLogin = findViewById(R.id.tv_signin_signin);
@@ -47,12 +46,14 @@ public class LoginActivity extends AppCompatActivity {
                 String email = mEtEmail.getText().toString();
                 String pass = mEtPassword.getText().toString();
 
+
                 if (!email.isEmpty() && !pass.isEmpty()) {
 
                     mFirebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, "signed in ", Toast.LENGTH_SHORT).show();
                                 //Sign in complete
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(intent);

@@ -2,19 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor">
+    android:background="@drawable/background">
 
     <!--Profile image on app open-->
-
-    <ImageView
-        android:id="@+id/iv_profile_pic_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:src="@mipmap/ic_launcher_round"/>
-
-    <!--    Email Box-->
 
     <EditText
         android:id="@+id/et_email_signup"
@@ -28,9 +18,10 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp" />
+        android:paddingBottom="10dp"
+        android:autofillHints="" />
 
-    <!--    Password box-->
+    <!--    Email Box-->
 
     <EditText
         android:id="@+id/et_pass_signup"
@@ -44,7 +35,9 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10dp" />
+
+    <!--    Password box-->
 
     <EditText
         android:id="@+id/et_pass_repeat_signup"
@@ -58,20 +51,15 @@
         android:hint="Password Repeat"
         android:inputType="textPassword"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10dp" />
 
-
-    <TextView
-
+    <ImageView
+        android:id="@+id/iv_profile_pic_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_pass_repeat_signup"
-        android:textAppearance="?android:textAppearanceLarge"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:id="@+id/tv_signup_signup"
-
-        android:text="Sign Up" />
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/ic_launcher_round" />
 
     <RelativeLayout
         android:id="@+id/rl_signup_signin"
@@ -90,37 +78,30 @@
             android:id="@+id/tv_signup_or"/>
 
         <TextView
+            android:id="@+id/tvLogmein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearance"
             android:layout_toRightOf="@id/tv_signup_or"
-            android:text="Sign Up"/>
+            android:text="Log in"
+            android:textAppearance="?android:textAppearance" />
 
     </RelativeLayout>
 
-    <LinearLayout
+
+    <TextView
+
+        android:id="@+id/tv_signup_signup"
         android:layout_width="wrap_content"
-        android:layout_below="@+id/tv_signup_signup"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="50dp"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_pass_repeat_signup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Sign Up"
 
-
-        <ImageView
-            android:id="@+id/iv_signup_google"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginRight="35dp"
-            android:background="@drawable/circle_background"
-            android:padding="8dp"
-            android:src="@drawable/ic_google_symbol" />
-
-    </LinearLayout>
-
+        android:textAppearance="?android:textAppearanceLarge" />
 
 
     <!--    <include-->

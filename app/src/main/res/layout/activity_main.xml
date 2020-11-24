@@ -17,7 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:src="@mipmap/ic_launcher_round" />
+        android:src="@mipmap/ic_launcher_round"
+        android:contentDescription="TODO" />
 
 
     <TextView
@@ -41,14 +42,14 @@
         android:text="email Address: " />
 
     <TextView
+        android:id="@+id/tvEmailId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_email_address"
-        android:layout_toRightOf="@+id/tv_your_email_address"
         android:layout_below="@+id/tv_welcome"
         android:layout_marginTop="50dp"
-        android:textStyle="bold"
-        android:text="dummy@me.com" />
+        android:layout_toRightOf="@+id/tv_your_email_address"
+        android:text="Email@gmail.com"
+        android:textStyle="bold" />
 
 
 

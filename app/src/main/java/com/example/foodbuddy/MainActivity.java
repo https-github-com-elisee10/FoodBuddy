@@ -2,21 +2,22 @@ package com.example.foodbuddy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     Button btn_logout;
-    TextView tv_email_address;
+    TextView tvEmailId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn_logout = findViewById(R.id.btn_logout);
-        tv_email_address = findViewById(R.id.tv_email_address);
+        tvEmailId = findViewById(R.id.tvEmailId);
 
 
         //get google informations
@@ -33,9 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         if (account!= null){
 
-            tv_email_address.setText("logged in");
+            Log.d("Email", "email "+ account.getEmail());
         }
 
         btn_logout.setOnClickListener(new View.OnClickListener() {

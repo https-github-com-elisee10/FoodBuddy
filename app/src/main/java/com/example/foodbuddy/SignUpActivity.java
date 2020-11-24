@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,8 +22,10 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText mEtEmail, mEtPassword, mEtRepeatPassword;
-    private TextView mTvSignUp;
+    private TextView mTvSignUp, tvLogmein;
     private FirebaseAuth mFirebaseAuth;
+
+
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -30,7 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-
+        tvLogmein = findViewById(R.id.tvLogmein);
         mEtEmail = findViewById(R.id.et_email_signup);
         mEtPassword = findViewById(R.id.et_pass_signup);
         mEtRepeatPassword = findViewById(R.id.et_pass_repeat_signup);
@@ -93,9 +96,6 @@ public class SignUpActivity extends AppCompatActivity {
                         }
 
 
-
-
-
                     }else{
                         Toast.makeText(SignUpActivity.this,"Password do not match", Toast.LENGTH_SHORT).show();
 
@@ -109,6 +109,13 @@ public class SignUpActivity extends AppCompatActivity {
 
         });
 
+
+        tvLogmein.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+            }
+        });
 
     }
 }
