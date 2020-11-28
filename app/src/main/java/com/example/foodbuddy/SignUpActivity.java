@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +17,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -44,15 +45,66 @@ public class SignUpActivity extends AppCompatActivity {
 
 
 
+
+
+        //Writing to Firebase DB
+       //final  FirebaseDatabase rootNode;
+       //final  DatabaseReference reference;   //Reference to the sub node of the root node above
+
+
+
+//
+//        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference ref = database.getReference("users");
+
+
+
+        //Save Data for Firebase on button signup
+//        mTvSignUp.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                rootNode = FirebaseDatabase.getInstance();
+//                reference = rootNode.getReference();
+//
+//                reference.setValue("Test, Test...Echo");
+//            }
+//        });
+//    }
+
+
+
+
+
         mTvSignUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+
+
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference ref = database.getReference("users");
+
+
+//
+//                rootNode = FirebaseDatabase.getInstance();
+//                DatabaseReference reference = rootNode.getReference('users');
+
+                //Get all the values from the text field
                 String email = mEtEmail.getText().toString();
                 String password = mEtPassword.getText().toString();
                 String RepeatPassword = mEtRepeatPassword.getText().toString();
 
-                //Check if it is all empty or not
+                UserHelperClass helperClass =  new UserHelperClass (email, password, RepeatPassword);
 
+                ref.setValue(helperClass);
+
+
+
+//
+//                String email = mEtEmail.getText().toString();
+//                String password = mEtPassword.getText().toString();
+//                String RepeatPassword = mEtRepeatPassword.getText().toString();
+
+                //Check if it is all empty or not
                 if (!email.isEmpty() && !password.isEmpty() && ! RepeatPassword.isEmpty()) {
                     //got values in the sign up field
                     if (password.equals(RepeatPassword)){

@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,15 +40,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//        // Write a test message to  the database ===> Passed
+        // {Writing  a test message to  the database ===> Passed ✅}
+
 //        FirebaseDatabase database = FirebaseDatabase.getInstance();
 //        DatabaseReference myRef = database.getReference("message");
 //        myRef.setValue("Hello, World!");
 
 
 
-        //get google informations
-
+        //get google information
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 
 
