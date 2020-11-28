@@ -4,51 +4,43 @@
 <RelativeLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/backgroundColor"
 
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavigation"
+        android:background="#FFFFFF"
+        tools:ignore="UnknownId">
 
-    <ImageView
-        android:id="@+id/iv_profile_pic_user"
-        android:layout_width="wrap_content"
+
+        <Button
+            android:id="@+id/btnLogOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Log out" />
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:src="@mipmap/ic_launcher_round"
-        android:contentDescription="TODO" />
-
-
-    <TextView
-        android:id="@+id/tv_welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_profile_pic_user"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Welcome"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:textStyle="bold" />
-
-
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="100dp"
-        android:layout_height="120dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="354dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="201dp"
-        android:background="@color/buttonColor"
-        android:onClick="logout"
-        android:text="Log Out"
-        android:textAllCaps="false" />
+        android:layout_marginBottom="0dp"
+        app:itemHorizontalTranslationEnabled="false"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/menu_bottom_navigation" />
+
+
 </RelativeLayout>
 
 

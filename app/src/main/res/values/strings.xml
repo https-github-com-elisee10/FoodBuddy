@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">FoodBuddy</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="trend_fragment">trend fragment</string>
+    <string name="search_fragment">search fragment</string>
+    <string name="profile_fragment">profile fragment</string>
     <!--    <string name="default_web_client_id" />-->
 </resources>
