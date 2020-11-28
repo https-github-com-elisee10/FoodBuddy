@@ -31,7 +31,6 @@ android {
 
 dependencies {
 
-//    implementation(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
@@ -45,14 +44,19 @@ dependencies {
     implementation "com.google.firebase:firebase-appindexing:19.1.0"
     implementation "com.google.firebase:firebase-messaging:21.0.0"
     implementation 'com.google.firebase:firebase-database:19.5.1'
-    apply plugin: 'com.google.gms.google-services'
-
+    implementation 'com.google.firebase:firebase-database:19.5.1'
 //for the fragments portion
     implementation "androidx.appcompat:appcompat:${appCompatVersion}"
     implementation "com.google.android.material:material:${designSupportVersion}"
 
-
+//Firebase Plugin
+    implementation platform('com.google.firebase:firebase-bom:26.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
 
 
 
 }
+
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.android.application'

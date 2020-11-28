@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
-    <!--Profile image on app open-->
 
     <EditText
         android:id="@+id/et_email_signup"
@@ -53,6 +52,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp" />
 
+
+<!--    Removing that image at the top because it has no purpose, better one to be designed -->
     <ImageView
         android:id="@+id/iv_profile_pic_signup"
         android:layout_width="wrap_content"

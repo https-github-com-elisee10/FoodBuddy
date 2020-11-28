@@ -2,12 +2,9 @@ package com.example.foodbuddy;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +16,6 @@ import com.example.foodbuddy.fragments.searchFragment;
 import com.example.foodbuddy.fragments.trendingFragment;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.material.bottomnavigation.BottomNavigationMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -39,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
         btn_logout = findViewById(R.id.btnLogOut);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+
+
+//        // Write a test message to  the database ===> Passed
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference myRef = database.getReference("message");
+//        myRef.setValue("Hello, World!");
 
 
 
