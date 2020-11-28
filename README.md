@@ -59,6 +59,14 @@ Additionally they user will have a shooping list note section for reminding them
 * [User can upload thier vides on how to make recipes]
 * [User can like and share other peoples recipe]
 
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/signup.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+<img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/login.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### 2. Screen Archetypes
 
