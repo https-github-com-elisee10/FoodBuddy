@@ -2,16 +2,16 @@ package com.example.foodbuddy;
 
 public class UserHelperClass {
 
-    String  email, password, RepeatPassword;
+    String  email, password;
 
     public UserHelperClass(){
 
     }
 
-    public UserHelperClass(String email, String password, String RepeatPassword) {
+    public UserHelperClass(String email, String password) {
         this.email = email;
         this.password = password;
-        this.RepeatPassword = RepeatPassword;
+
     }
 
 
@@ -31,11 +31,5 @@ public class UserHelperClass {
         this.password = password;
     }
 
-    public String getRepeatPassword() {
-        return RepeatPassword;
-    }
 
-    public void setRepeatPassword(String RepeatPassword) {
-        this.RepeatPassword = RepeatPassword;
-    }
 }

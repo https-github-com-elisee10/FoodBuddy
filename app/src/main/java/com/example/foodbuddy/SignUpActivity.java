@@ -3,6 +3,7 @@ package com.example.foodbuddy;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,11 +21,20 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.UUID;
+
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText mEtEmail, mEtPassword, mEtRepeatPassword;
     private TextView mTvSignUp, tvLogmein;
     private FirebaseAuth mFirebaseAuth;
+
+    //generate a random unique id for the user
+    String id= UUID.randomUUID().toString();
+
+    //setting up firebase
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
 
 
 
@@ -44,65 +54,32 @@ public class SignUpActivity extends AppCompatActivity {
 
 
 
-
-
-
-        //Writing to Firebase DB
-       //final  FirebaseDatabase rootNode;
-       //final  DatabaseReference reference;   //Reference to the sub node of the root node above
-
-
-
-//
-//        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference ref = database.getReference("users");
-
-
-
-        //Save Data for Firebase on button signup
-//        mTvSignUp.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                rootNode = FirebaseDatabase.getInstance();
-//                reference = rootNode.getReference();
-//
-//                reference.setValue("Test, Test...Echo");
-//            }
-//        });
-//    }
-
-
-
-
-
         mTvSignUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
 
 
-                final FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference ref = database.getReference("users");
+                // Implementing firebase database
 
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference("users");
 
-//
-//                rootNode = FirebaseDatabase.getInstance();
-//                DatabaseReference reference = rootNode.getReference('users');
+                // end of database implementation
+
 
                 //Get all the values from the text field
                 String email = mEtEmail.getText().toString();
                 String password = mEtPassword.getText().toString();
                 String RepeatPassword = mEtRepeatPassword.getText().toString();
 
-                UserHelperClass helperClass =  new UserHelperClass (email, password, RepeatPassword);
+                //setup the field you want in the database
+                UserHelperClass helperClass =  new UserHelperClass(email, password);
 
-                ref.setValue(helperClass);
+                Log.d("values", "mes " + email + " " +  password);
+                // store the data in the database
 
+                reference.child(id).setValue(helperClass);
 
-
-//
-//                String email = mEtEmail.getText().toString();
-//                String password = mEtPassword.getText().toString();
-//                String RepeatPassword = mEtRepeatPassword.getText().toString();
 
                 //Check if it is all empty or not
                 if (!email.isEmpty() && !password.isEmpty() && ! RepeatPassword.isEmpty()) {
