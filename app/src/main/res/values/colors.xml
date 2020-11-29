@@ -9,5 +9,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="backgroundColor">#c3b18e</color>
-    <color name="buttonColor">#ecab9b</color>
+<!--    <color name="backgroundColor">#f5f5dc</color>-->
+<!--    <color name="buttonColor">#ecab9b</color>-->
 </resources>
