@@ -72,7 +72,7 @@ Here's a walkthrough of implemented user stories:
 <img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/login.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
-* Sprint 2\
+* Sprint 2
 
 
 <img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/sprint2.gif' title='Video Walkthrough' width='' alt='sprint 2' />
