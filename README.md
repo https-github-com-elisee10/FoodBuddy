@@ -64,7 +64,7 @@ Additionally they user will have a shooping list note section for reminding them
 
 Here's a walkthrough of implemented user stories:
 
-Sprint 1:
+* Sprint 1
 
 <img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/signup.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
@@ -72,7 +72,9 @@ Sprint 1:
 <img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/login.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
-Sprint 2:
+* Sprint 2\
+
+
 <img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/sprint2.gif' title='Video Walkthrough' width='' alt='sprint 2' />
 
 
