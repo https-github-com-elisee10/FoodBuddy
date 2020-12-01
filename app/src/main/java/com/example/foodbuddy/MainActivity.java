@@ -1,10 +1,13 @@
 package com.example.foodbuddy;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +21,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
@@ -34,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        try {
+//            get_json();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
 
         btn_logout = findViewById(R.id.btnLogOut);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -105,4 +122,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+//
+//    //open the json file from local
+//    public void get_json() throws IOException, JSONException {
+//        String json;
+//
+//
+//            InputStream is = getAssets().open("recipe.json");
+//            int size = is.available();
+//            byte [] buffer = new byte[size];
+//            is.read();
+//            is.close();
+//
+//
+//            json = new String(buffer, "UTF-8");
+//            JSONArray jsonArray = new JSONArray(json);
+//
+//            for (int i=0; i< size; i++){
+//                JSONObject obj = jsonArray.getJSONObject(i);
+//
+//
+//
+//            }
+//
+//        Toast.makeText(MainActivity.this,"json ", Toast.LENGTH_SHORT).show();
+//    }
+
+
+
+
 }
