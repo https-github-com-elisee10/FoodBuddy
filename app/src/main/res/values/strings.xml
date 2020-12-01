@@ -5,5 +5,7 @@
     <string name="trend_fragment">trend fragment</string>
     <string name="search_fragment">search fragment</string>
     <string name="profile_fragment">profile fragment</string>
+    <string name="todo">TODO</string>
+    <string name="log_out">Log out</string>
     <!--    <string name="default_web_client_id" />-->
 </resources>
