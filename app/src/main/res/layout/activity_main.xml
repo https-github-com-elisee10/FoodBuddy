@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="Log out" />
+            android:text="@string/log_out" />
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
