@@ -25,7 +25,7 @@ import java.util.UUID;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private EditText mEtEmail, mEtPassword, mEtRepeatPassword;
+    private EditText mEtuserName, mEtPassword, mEtRepeatPassword;
     private TextView mTvSignUp, tvLogmein;
     private FirebaseAuth mFirebaseAuth;
 
@@ -45,7 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         tvLogmein = findViewById(R.id.tvLogmein);
-        mEtEmail = findViewById(R.id.et_email_signup);
+        mEtuserName = findViewById(R.id.et_email_signup);
         mEtPassword = findViewById(R.id.et_pass_signup);
         mEtRepeatPassword = findViewById(R.id.et_pass_repeat_signup);
         mTvSignUp = findViewById(R.id.tv_signup_signup);
@@ -64,60 +64,35 @@ public class SignUpActivity extends AppCompatActivity {
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("users");
 
+
+
                 // end of database implementation
 
 
                 //Get all the values from the text field
-                String email = mEtEmail.getText().toString();
+                String userName = mEtuserName.getText().toString();
                 String password = mEtPassword.getText().toString();
                 String RepeatPassword = mEtRepeatPassword.getText().toString();
 
-                //setup the field you want in the database
-                UserHelperClass helperClass =  new UserHelperClass(email, password);
 
-                Log.d("values", "mes " + email + " " +  password);
-                // store the data in the database
-
-                reference.child(id).setValue(helperClass);
 
 
                 //Check if it is all empty or not
-                if (!email.isEmpty() && !password.isEmpty() && ! RepeatPassword.isEmpty()) {
+                if (!userName.isEmpty() && !password.isEmpty() && ! RepeatPassword.isEmpty()) {
                     //got values in the sign up field
                     if (password.equals(RepeatPassword)){
                         //Password Matched
                         if (password.length()>=6) {
 
-                            //Performing sign up now
-                            mFirebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if(task.isSuccessful()) {
-                                        //user created!
-                                        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
-                                        finish();
-                                    }else {
-                                        //Something went wrong
-                                        Toast.makeText(SignUpActivity.this, "Check and TRy again", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            }).addOnFailureListener(new OnFailureListener(){
-                                @Override
-                                public void onFailure(@NonNull Exception e){
-                                    //Failed
-                                    Toast.makeText(SignUpActivity.this,"Error: " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            //setup the field you want in the database
+                            UserHelperClass helperClass =  new UserHelperClass(userName, password);
 
-                                }
+                            // store the data in the database
 
-                            })
-                                    .addOnCanceledListener(new OnCanceledListener() {
-                                        @Override
-                                        public void onCanceled() {
-                                            Toast.makeText(SignUpActivity.this, "Please fill all all the values", Toast.LENGTH_SHORT).show();
+                            reference.child(userName).setValue(helperClass);
 
-                                        }
-                                    });
-
+                            startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                            finish();
 
                         }else{
                             //Password length too short according to firebase recommendation

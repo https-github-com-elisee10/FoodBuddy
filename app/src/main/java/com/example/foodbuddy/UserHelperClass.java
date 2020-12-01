@@ -2,26 +2,20 @@ package com.example.foodbuddy;
 
 public class UserHelperClass {
 
-    String  email, password;
+    String userName, password;
 
     public UserHelperClass(){
 
     }
 
-    public UserHelperClass(String email, String password) {
-        this.email = email;
+    public UserHelperClass(String userName, String password) {
+
         this.password = password;
+        this.userName = userName;
 
     }
 
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getPassword() {
         return password;
@@ -31,5 +25,11 @@ public class UserHelperClass {
         this.password = password;
     }
 
+    public String getuserName() {
+        return userName;
+    }
 
+    public void setuserName(String userName) {
+        this.userName = userName;
+    }
 }
