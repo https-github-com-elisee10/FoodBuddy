@@ -35,8 +35,9 @@ Additionally they user will have a shooping list note section for reminding them
 * [x][User can register for an account]
 * [x][User can see food buddy(app) logo]
 * [x][User can login]
-* [User can see three navigation buttons]
-* [Each navigation button contains search bar, random food recipe and profile]
+* [x][User can see three navigation buttons]
+* [x][Each navigation button contains search bar, random food recipe and profile]
+* [x][User can logut]
 * [User can search for a recipe]
 * [User can click search button]
 * [User can click recipe for detail]
@@ -63,10 +64,17 @@ Additionally they user will have a shooping list note section for reminding them
 
 Here's a walkthrough of implemented user stories:
 
+Sprint 1:
+
 <img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/signup.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 <img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/login.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+Sprint 2:
+<img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/sprint2.gif' title='Video Walkthrough' width='' alt='sprint 2' />
+
 
 ### 2. Screen Archetypes
 
