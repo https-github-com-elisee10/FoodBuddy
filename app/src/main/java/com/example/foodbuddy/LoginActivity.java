@@ -2,22 +2,14 @@ package com.example.foodbuddy;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mEtuserName = findViewById(R.id.et_email_signin);
+        mEtuserName = findViewById(R.id.et_username_signin);
         mEtPassword = findViewById(R.id.et_pass_signin);
         mTvLogin = findViewById(R.id.tv_signin_signin);
 
@@ -138,6 +130,9 @@ public class LoginActivity extends AppCompatActivity {
                         //fetch the userName
                         String usernameFromDatabase = dataSnapshot.child(userNameEntered).child("userName").getValue(String.class);
 
+                        //fetch the email
+
+                        String userEmailFromDatabase = dataSnapshot.child(userNameEntered).child("email").getValue(String.class);
                         Intent i = new Intent(getApplicationContext(), MainActivity.class);
                         i.putExtra("userName", usernameFromDatabase);
                         i.putExtra("password", passFromDatabase);

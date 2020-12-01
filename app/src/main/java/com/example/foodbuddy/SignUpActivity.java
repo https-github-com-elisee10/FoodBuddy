@@ -3,20 +3,13 @@ package com.example.foodbuddy;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCanceledListener;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -25,7 +18,7 @@ import java.util.UUID;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private EditText mEtuserName, mEtPassword, mEtRepeatPassword;
+    private EditText mEtuserName, mEtPassword, mEtuserEmail;
     private TextView mTvSignUp, tvLogmein;
     private FirebaseAuth mFirebaseAuth;
 
@@ -45,9 +38,9 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         tvLogmein = findViewById(R.id.tvLogmein);
-        mEtuserName = findViewById(R.id.et_email_signup);
+        mEtuserName = findViewById(R.id.et_username_signup);
         mEtPassword = findViewById(R.id.et_pass_signup);
-        mEtRepeatPassword = findViewById(R.id.et_pass_repeat_signup);
+        mEtuserEmail = findViewById(R.id.et_user_email_signup);
         mTvSignUp = findViewById(R.id.tv_signup_signup);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -72,20 +65,18 @@ public class SignUpActivity extends AppCompatActivity {
                 //Get all the values from the text field
                 String userName = mEtuserName.getText().toString();
                 String password = mEtPassword.getText().toString();
-                String RepeatPassword = mEtRepeatPassword.getText().toString();
+                String userEmail = mEtuserEmail.getText().toString();
 
 
 
 
                 //Check if it is all empty or not
-                if (!userName.isEmpty() && !password.isEmpty() && ! RepeatPassword.isEmpty()) {
-                    //got values in the sign up field
-                    if (password.equals(RepeatPassword)){
+                if (!userName.isEmpty() && !password.isEmpty() && !userEmail.isEmpty()) {
                         //Password Matched
                         if (password.length()>=6) {
 
                             //setup the field you want in the database
-                            UserHelperClass helperClass =  new UserHelperClass(userName, password);
+                            UserHelperClass helperClass =  new UserHelperClass(userName, password, userEmail);
 
                             // store the data in the database
 
@@ -99,11 +90,6 @@ public class SignUpActivity extends AppCompatActivity {
                             Toast.makeText(SignUpActivity.this,"Too short, try again!", Toast.LENGTH_SHORT).show();
                         }
 
-
-                    }else{
-                        Toast.makeText(SignUpActivity.this,"Password do not match", Toast.LENGTH_SHORT).show();
-
-                    }
 
                 }else{
                     //No field can be left blank
