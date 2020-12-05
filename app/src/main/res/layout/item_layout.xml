@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/item_layout"
     android:layout_width="match_parent"
@@ -35,4 +35,4 @@
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/ivImage"
         tools:text="Food description for the given trending recipe" />
-</LinearLayout>
+</RelativeLayout>

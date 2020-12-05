@@ -43,92 +43,11 @@ public class MainActivity extends AppCompatActivity {
     final FragmentManager fragmentManager = getSupportFragmentManager();
 
 
-    //API RELATED
-
-    List<Recipe> recipes;
-    public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
-    public static final String TAG = "MainActivity";
-
-    //API RELATED
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //API FETCH STARTS HERE
-
-        //This rvMovies is from activity_main, represents the recycler view screen
-        RecyclerView rvTrending = findViewById(R.id.rvTrending);
-
-        //decraling movies arraylist
-        recipes = new ArrayList<>();
-
-
-        //creating async object
-        AsyncHttpClient client = new AsyncHttpClient();
-
-        //Create a constrcutor for movieAdapter class, and send context and movies
-        final RecipeAdapter recipeAdapter = new RecipeAdapter(this, recipes);
-
-        //set the adapter in recycler view
-
-        rvTrending.setAdapter(recipeAdapter);
-
-        //set a layout manager on the recycler view
-
-        rvTrending.setLayoutManager(new LinearLayoutManager(this));
-
-
-        //fetching the API with client.get
-        client.get(NOW_PLAYING_URL, new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Headers headers, JSON json) {
-
-                //logging onSuccess to make sure onSuccess method is invoked
-                Log.d(TAG, "onSuccess");
-
-                //Initiating a jsonObject of type json which will let us access the movie api, key and value
-                JSONObject jsonObject = json.jsonObject;
-
-                //To make sure we don't run into error, use try catch
-                try {
-
-                    //result is a json array that will fetch the results from movie api
-
-
-                    JSONArray results = jsonObject.getJSONArray("results");
-
-                    //logging result to make sure it parses the api
-                    Log.i(TAG, "Results" + results.toString());
-
-                    //sending to Movie class the result object
-
-                    recipes.addAll(Recipe.fromJsonArray(results));
-
-                    //notify when its rendered
-                    recipeAdapter.notifyDataSetChanged();
-
-                    //logging the size of the movies object, which is an array list
-
-                    Log.i(TAG, "movie size" + recipes.size());
-                }
-
-                catch (JSONException e){
-
-                    //if error, log JSON exception
-                    Log.e(TAG, "JSON exception");
-                }
-            }
-
-            @Override
-            public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-
-            }
-        });
-
-
-
 
 
 
