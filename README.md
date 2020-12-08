@@ -32,23 +32,23 @@ Additionally they user will have a shooping list note section for reminding them
 
 **Required Must-have Stories**
 
-* [x]User can register for an account
-* [x]User can see food buddy(app) logo
-* [x]User can login
-* [x]User can see three navigation buttons
-* [x]Each navigation button contains search bar, random food recipe and profile
-* [x]User can logut
+* [x] User can register for an account
+* [x] User can see food buddy(app) logo
+* [x] User can login
+* [x] User can see three navigation buttons
+* [x] Each navigation button contains search bar, random food recipe and profile
+* [x] User can logut
 * [User can search for a recipe]
 * [User can click search button]
 * [User can click recipe for detail]
-* [x]User can see varieties of recipies
-* [x]User can see random food recipes
+* [x] User can see varieties of recipies
+* [x] User can see random food recipes
 * [User can see a search bar at the top]
 * [User can type in food name]
 * [User can click search button]
-* [x]User can see the title, image and description of items
-* [x]User can automatically see random recipes
-* [x]User can click on the recipes to see detail screen
+* [x] User can see the title, image and description of items
+* [x] User can automatically see random recipes
+* [x] User can click on the recipes to see detail screen
 * [User can see a detail page on the recipe]
 * [User can see their own profile]
 * [User can save their favorite recipe]
