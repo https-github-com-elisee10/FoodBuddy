@@ -41,6 +41,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
 
+    //parcers
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+    
+
 //    No longer needed in newer SDK versions ==> | implementation 'com.google.firebase:firebase-core:19.0.0'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
     implementation "com.google.firebase:firebase-appindexing:19.1.0"
@@ -60,13 +65,11 @@ dependencies {
 
     //glide library for image
 
-    implementation 'com.codepath.libraries:asynchttpclient:0.0.9'
 
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     // Glide v4 uses this new annotation processor -- see https://bumptech.github.io/glide/doc/generatedapi.html
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-    implementation 'org.parceler:parceler-api:1.1.12'
-    annotationProcessor 'org.parceler:parceler:1.1.12'
+
 
 }
 

@@ -1,15 +1,19 @@
 package com.example.foodbuddy;
 
 import android.content.Context;
-import android.content.res.Configuration;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -84,7 +88,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         ImageView ivTrendingImage;
         TextView tvTrendingTitle;
         TextView tvTrendingTime;
-//        RelativeLayout container;
+        RelativeLayout trendingcontainer;
 
         //constructor to receive the each items
         public ViewHolder(@NonNull View itemView) {
@@ -95,7 +99,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             tvTrendingTitle = itemView.findViewById(R.id.tvTrendingTitle);
             tvTrendingTime= itemView.findViewById(R.id.tvTrendingTime);
             ivTrendingImage = itemView.findViewById(R.id.ivTrendingImage);
-//            container = itemView.findViewById(R.id.container);
+            trendingcontainer= itemView.findViewById(R.id.trendingcontainer);
 
 
 
@@ -110,6 +114,9 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             String time = String.valueOf(recipe.getTime());
             tvTrendingTime.setText(time);
 
+//            String id = String.valueOf(recipe.id);
+
+
 
 
             String imageItemUrl = recipe.getimagePath();
@@ -120,15 +127,18 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             Glide.with(context).load(imageItemUrl).into(ivTrendingImage);
 
 
-//            container.setOnClickListener(new View.OnClickListener(){
-//
-//                @Override
-//                public void onClick(View v) {
-//                    Intent i = new Intent(context, DetailActivity.class);
-//                    i.putExtra("movie", Parcels.wrap(movie));
-//                    context.startActivity(i);
-//                }
-//            });
+            trendingcontainer.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+
+
+                    Log.i("Message", "works");
+                    Intent i = new Intent(context, DetailTrendingActivity.class);
+//                    i.putExtra("recipe", Parcels.wrap(recipe));
+                    context.startActivity(i);
+                }
+            });
 
 
 

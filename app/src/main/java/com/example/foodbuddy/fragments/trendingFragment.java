@@ -1,5 +1,6 @@
 package com.example.foodbuddy.fragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
@@ -75,6 +77,7 @@ public class trendingFragment extends Fragment {
 
         //This rvMovies is from activity_main, represents the recycler view screen
         RecyclerView rvTrending = view.findViewById(R.id.rvTrending);
+
 
         //decraling movies arraylist
         recipes = new ArrayList<>();
