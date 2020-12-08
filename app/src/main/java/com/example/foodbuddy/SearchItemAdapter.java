@@ -10,33 +10,19 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-//The first thing we want to define is a class, here we have movieAdapter
-
-//The movie Adapter will extend RecyclerView.Adapter as step 1
-
-//Inside the adapter we put the viewHolder class we created, which is movieAdapter.ViewHolder
-
-
-//This will create 3 methods by itself, oncreateViewholder, onBindViewHolder, getItemCount
-
-
-//Then we have the ViewHolder class that extends recyclerView.ViewHolder
-
 //So, its adapter and then the
-public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder>{
+public class SearchItemAdapter extends RecyclerView.Adapter<SearchItemAdapter.ViewHolder>{
 
     Context context;
-    List<Recipe> recipes;
+    List<SearchItem> searchItems;
 
-    public RecipeAdapter(Context context, List<Recipe> recipes) {
+    public SearchItemAdapter(Context context, List<SearchItem> searchItems) {
         this.context = context;
-        this.recipes = recipes;
+        this.searchItems = searchItems;
     }
 
     //This method creates the layout for the movie data
@@ -53,19 +39,19 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
 
 
         //we want to display it to view, so we create View movieView. movieView contains content to show the view
-        View recipeView = LayoutInflater.from(context).inflate(R.layout.item_layout, parent, false);
+        View searchItemView = LayoutInflater.from(context).inflate(R.layout.searchitem_layout, parent, false);
 
 
         //we return
-        return new ViewHolder(recipeView);
+        return new ViewHolder(searchItemView);
     }
 
     //populating data into the view with the viewHolder
     //It will take the position and insert that into view
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Recipe recipe = recipes.get(position);
-        holder.bind(recipe);
+        SearchItem searchItem = searchItems.get(position);
+        holder.bind(searchItem);
 
 
     }
@@ -73,7 +59,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
     //Return the size of the movie list
     @Override
     public int getItemCount() {
-        return recipes.size();
+        return searchItems.size();
     }
 
     //first viewHolder class extends the recyclerView.ViewHolder
@@ -81,9 +67,9 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         //declaring the view types
-        ImageView ivTrendingImage;
-        TextView tvTrendingTitle;
-        TextView tvTrendingTime;
+        ImageView ivSearchImage;
+        TextView tvSearchTitle;
+        TextView tvSearchTime;
 //        RelativeLayout container;
 
         //constructor to receive the each items
@@ -92,32 +78,33 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
 
             //fetching the views by id
 
-            tvTrendingTitle = itemView.findViewById(R.id.tvTrendingTitle);
-            tvTrendingTime= itemView.findViewById(R.id.tvTrendingTime);
-            ivTrendingImage = itemView.findViewById(R.id.ivTrendingImage);
+            tvSearchTitle = itemView.findViewById(R.id.tvSearchTitle);
+            tvSearchTime= itemView.findViewById(R.id.tvSearchTime);
+            ivSearchImage = itemView.findViewById(R.id.ivSearchImage);
 //            container = itemView.findViewById(R.id.container);
 
 
 
         }
 
-        public void bind(final Recipe recipe) {
+        public void bind(final SearchItem searchItem) {
 
-            tvTrendingTitle.setText(recipe.getTitle());
+
+            tvSearchTitle.setText(searchItem.getTitle());
 
             //change the int to string for time
 
-            String time = String.valueOf(recipe.getTime());
-            tvTrendingTime.setText(time);
+            String time = String.valueOf(searchItem.getTime());
+            tvSearchTime.setText(time);
 
 
 
-            String imageItemUrl = recipe.getimagePath();
+            String imageItemUrl = searchItem.getimagePath();
 
 
 
 
-            Glide.with(context).load(imageItemUrl).into(ivTrendingImage);
+            Glide.with(context).load(imageItemUrl).into(ivSearchImage);
 
 
 //            container.setOnClickListener(new View.OnClickListener(){

@@ -7,5 +7,6 @@
     <string name="profile_fragment">profile fragment</string>
     <string name="todo">TODO</string>
     <string name="log_out">Log out</string>
+    <string name="time_in_minutes">Time(In minutes)</string>
     <!--    <string name="default_web_client_id" />-->
 </resources>

@@ -1,16 +1,13 @@
 package com.example.foodbuddy;
 
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Recipe {
+public class SearchItem {
 
     //declaring these objects to hold the title, path and overview from the movie api
     String imagePath, title;
@@ -25,7 +22,7 @@ public class Recipe {
 
     //empty constructor created by Parcels library
 
-    public Recipe(JSONObject jsonObject) throws JSONException {
+    public SearchItem(JSONObject jsonObject) throws JSONException {
         imagePath = jsonObject.getString("image");
         title = jsonObject.getString("title");
         time = jsonObject.getInt("readyInMinutes");
@@ -33,16 +30,16 @@ public class Recipe {
 
     }
 
-    public static List<Recipe> fromJsonArray(JSONArray recipeJsonArray) throws JSONException{
+    public static List<SearchItem> fromJsonArray(JSONArray searchItemJsonArray) throws JSONException{
 
-        List<Recipe> recipes = new ArrayList<>();
+        List<SearchItem> searchItems = new ArrayList<>();
 
-        for (int i=0; i< recipeJsonArray.length(); i++){
-            recipes.add(new Recipe(recipeJsonArray.getJSONObject(i)));
+        for (int i=0; i< searchItemJsonArray.length(); i++){
+            searchItems.add(new SearchItem(searchItemJsonArray.getJSONObject(i)));
 
         }
 
-        return recipes;
+        return searchItems;
     }
 
     public String getimagePath() {
@@ -60,7 +57,4 @@ public class Recipe {
 
     public int getId(){ return id; }
 
-
 }
-
-

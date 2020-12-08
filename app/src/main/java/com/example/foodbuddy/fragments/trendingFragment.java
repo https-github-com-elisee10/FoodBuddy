@@ -33,8 +33,8 @@ public class trendingFragment extends Fragment {
     //API RELATED
 
     List<Recipe> recipes;
-    public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
-    public static final String TAG = "MainActivity";
+    public static final String NOW_PLAYING_URL = "https://api.spoonacular.com/recipes/search?cuisine=italian&apiKey=7e4bf9cab7ab42b1aa7d886374bf0b51";
+    public static final String TAG = "trendingFragment";
 
     //API RELATED
 
@@ -116,7 +116,7 @@ public class trendingFragment extends Fragment {
                     JSONArray results = jsonObject.getJSONArray("results");
 
                     //logging result to make sure it parses the api
-                    Log.i(TAG, "Results" + results.toString());
+//                    Log.i(TAG, "Results" + results.toString());
 
                     //sending to Movie class the result object
 
