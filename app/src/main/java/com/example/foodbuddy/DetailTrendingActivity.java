@@ -122,7 +122,7 @@ public class DetailTrendingActivity extends AppCompatActivity {
 //                  Toast.makeText(getApplicationContext(), "instruction" + instruction, Toast.LENGTH_SHORT).show();
 
                     //logging result to make sure it parses the api
-//                    ....Log.i(TAG, "Results" + instructions.toString());
+//                    Log.i(TAG, "Results" + instructions.toString());
 
                 }
 
