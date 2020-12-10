@@ -28,7 +28,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DetailTrendingActivity extends AppCompatActivity {
-    Context context;
+    public static  Context context;
     TextView tvDetailTitle,tvInstructions;
     ImageView ivDetailImage;
 
@@ -44,6 +44,9 @@ public class DetailTrendingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_trending);
+
+
+        context = getApplicationContext();
 
         tvDetailTitle = findViewById(R.id.tvDetailTitle);
         ivDetailImage = findViewById(R.id.ivDetailImage);
@@ -107,6 +110,7 @@ public class DetailTrendingActivity extends AppCompatActivity {
 //                    Bitmap mIcon_val = BitmapFactory.decodeStream(req.openConnection().getInputStream());
 //                    ivDetailImage.setImageBitmap(mIcon_val);
 //                    Glide.with(context).load(imageUrl).into(ivDetailImage);
+                      Glide.with(DetailTrendingActivity.context).load(imageUrl).into(ivDetailImage);
 
 
 
