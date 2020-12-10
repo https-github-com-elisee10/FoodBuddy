@@ -28,6 +28,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class trendingFragment extends Fragment {
@@ -35,7 +36,40 @@ public class trendingFragment extends Fragment {
     //API RELATED
 
     List<Recipe> recipes;
-    public static final String NOW_PLAYING_URL = "https://api.spoonacular.com/recipes/search?cuisine=italian&apiKey=7e4bf9cab7ab42b1aa7d886374bf0b51";
+
+    //26 total cuisine to choose from
+
+    String[] chooseCuisine = {
+            "African",
+            "American",
+            "British",
+            "Cajun",
+            "Caribbean",
+            "Chinese",
+            "Eastern European",
+            "European",
+            "French",
+            "German",
+            "Greek",
+            "Indian",
+            "Irish",
+            "Italian",
+            "Japanese",
+            "Jewish",
+            "Korean",
+            "Latin American",
+            "Mediterranean",
+            "Mexican",
+            "Middle Eastern",
+            "Nordic",
+            "Southern",
+            "Spanish",
+            "Thai",
+            "Vietnamese"
+    };
+    Random random = new Random();
+    int randomNumber = random.nextInt(chooseCuisine.length);
+
     public static final String TAG = "trendingFragment";
 
     //API RELATED
@@ -70,7 +104,7 @@ public class trendingFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+        String NOW_PLAYING_URL = "https://api.spoonacular.com/recipes/search?cuisine=" + chooseCuisine[randomNumber] + "&number=20&apiKey=7e4bf9cab7ab42b1aa7d886374bf0b51";
 
 
         //API FETCH STARTS HERE

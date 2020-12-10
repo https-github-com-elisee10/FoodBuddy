@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rlTrending"
+    android:id="@+id/searchContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -30,12 +30,12 @@
 
     <TextView
         android:id="@+id/tvSearchTime"
-        android:layout_width="50dp"
-        android:layout_height="20dp"
+        android:layout_width="37dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tvSearchTitle"
         android:layout_centerVertical="true"
         android:layout_marginStart="17dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="7dp"
         android:layout_toEndOf="@+id/ivSearchImage"
         android:textStyle="bold"
@@ -48,9 +48,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="98dp"
-        android:layout_marginBottom="6dp"
-        android:text="Minutes" />
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/minutes" />
+
 
 </RelativeLayout>

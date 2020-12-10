@@ -1,11 +1,13 @@
 package com.example.foodbuddy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -70,7 +72,7 @@ public class SearchItemAdapter extends RecyclerView.Adapter<SearchItemAdapter.Vi
         ImageView ivSearchImage;
         TextView tvSearchTitle;
         TextView tvSearchTime;
-//        RelativeLayout container;
+        RelativeLayout searchContainer;
 
         //constructor to receive the each items
         public ViewHolder(@NonNull View itemView) {
@@ -81,7 +83,7 @@ public class SearchItemAdapter extends RecyclerView.Adapter<SearchItemAdapter.Vi
             tvSearchTitle = itemView.findViewById(R.id.tvSearchTitle);
             tvSearchTime= itemView.findViewById(R.id.tvSearchTime);
             ivSearchImage = itemView.findViewById(R.id.ivSearchImage);
-//            container = itemView.findViewById(R.id.container);
+            searchContainer = itemView.findViewById(R.id.searchContainer);
 
 
 
@@ -107,15 +109,16 @@ public class SearchItemAdapter extends RecyclerView.Adapter<SearchItemAdapter.Vi
             Glide.with(context).load(imageItemUrl).into(ivSearchImage);
 
 
-//            container.setOnClickListener(new View.OnClickListener(){
-//
-//                @Override
-//                public void onClick(View v) {
-//                    Intent i = new Intent(context, DetailActivity.class);
-//                    i.putExtra("movie", Parcels.wrap(movie));
-//                    context.startActivity(i);
-//                }
-//            });
+            searchContainer.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(context, DetailTrendingActivity.class);
+                    intent.putExtra("id", Integer.toString(searchItem.getId()));
+                    context.startActivity(intent);
+                }
+            });
 
 
 

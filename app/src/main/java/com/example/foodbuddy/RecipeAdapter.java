@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -133,10 +134,16 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
                 public void onClick(View v) {
 
 
-                    Log.i("Message", "works");
-                    Intent i = new Intent(context, DetailTrendingActivity.class);
-//                    i.putExtra("recipe", Parcels.wrap(recipe));
-                    context.startActivity(i);
+                    Intent intent = new Intent(context, DetailTrendingActivity.class);
+                    intent.putExtra("id", Integer.toString(recipe.getId()));
+                    context.startActivity(intent);
+
+//                    Log.i("Message", "recipe " + context);
+//
+//                    Intent i = new Intent(context, DetailTrendingActivity.class);
+////                    Toast.makeText(context, recipe.getId(), Toast.LENGTH_SHORT).show();
+////                    i.putExtra("recipe", Parcels.wrap(recipe));
+//                    context.startActivity(i);
                 }
             });
 

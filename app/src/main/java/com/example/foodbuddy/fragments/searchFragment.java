@@ -34,7 +34,7 @@ public class searchFragment extends Fragment {
     //API RELATED
 
     List<SearchItem> searchItems;
-    public static final String RECIPE_URL = "https://api.spoonacular.com/recipes/search?cuisine=indian&apiKey=7e4bf9cab7ab42b1aa7d886374bf0b51";
+    public String RECIPE_URL, search;
     public static final String TAG = "searchFragment";
 
     //API RELATED
@@ -65,7 +65,14 @@ public class searchFragment extends Fragment {
         //decraling movies arraylist
         searchItems = new ArrayList<>();
 
+        //user searched item name is put in the search string
 
+        //lets hardcode chicken for now
+
+        search = "chicken";
+
+
+        RECIPE_URL = "https://api.spoonacular.com/recipes/search?query=" + search + "&number=20&apiKey=7e4bf9cab7ab42b1aa7d886374bf0b51";
         //creating async object
         AsyncHttpClient client = new AsyncHttpClient();
 //
@@ -102,7 +109,7 @@ public class searchFragment extends Fragment {
                     JSONArray results = jsonObject.getJSONArray("results");
 
                     //logging result to make sure it parses the api
-                    Log.i(TAG, "Results" + results.toString());
+//                    Log.i(TAG, "Results" + results.toString());
 
                     //sending to Movie class the result object
 
