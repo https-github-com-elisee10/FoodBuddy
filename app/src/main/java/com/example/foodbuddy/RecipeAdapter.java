@@ -12,6 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 import org.parceler.Parcels;
@@ -38,6 +41,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
 
     Context context;
     List<Recipe> recipes;
+
 
     public RecipeAdapter(Context context, List<Recipe> recipes) {
         this.context = context;
@@ -137,6 +141,12 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
                     Intent intent = new Intent(context, DetailTrendingActivity.class);
                     intent.putExtra("id", Integer.toString(recipe.getId()));
                     context.startActivity(intent);
+
+
+
+
+
+
 
 //                    Log.i("Message", "recipe " + context);
 //

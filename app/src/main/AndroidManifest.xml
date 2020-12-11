@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodBuddy">
-        <activity android:name=".DetailSearchActivity"></activity>
+        <activity android:name=".DetailSearchActivity" />
         <activity android:name=".DetailTrendingActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -22,8 +22,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Google_SignIn_SignUp_Activity" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

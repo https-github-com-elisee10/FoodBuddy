@@ -9,5 +9,6 @@
     <string name="log_out">Log out</string>
     <string name="time_in_minutes">Time(In minutes)</string>
     <string name="minutes">Minutes</string>
+
     <!--    <string name="default_web_client_id" />-->
 </resources>

@@ -15,7 +15,7 @@
     <FrameLayout
         android:id="@+id/flContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="602dp"
         android:layout_above="@+id/bottomNavigation"
         android:background="#FFFFFF"
         tools:ignore="UnknownId">
@@ -23,9 +23,11 @@
 
         <Button
             android:id="@+id/btnLogOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="81dp"
+            android:layout_height="54dp"
             android:layout_gravity="end"
+            android:background="@drawable/logout"
+            android:backgroundTint="#FFFFFF"
             android:text="@string/log_out" />
     </FrameLayout>
 

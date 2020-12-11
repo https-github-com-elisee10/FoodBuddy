@@ -17,6 +17,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,22 +31,50 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DetailTrendingActivity extends AppCompatActivity {
-    Context context;
+    @SuppressLint("StaticFieldLeak")
+    public static Context context;
     TextView tvDetailTitle,tvInstructions;
     ImageView ivDetailImage;
 
     //url to get the information about the food with given id
     String id;
 
-    final String TAG = "DetailTrendingActivity";
+    //getting userName from signinActivity
 
+    String userName;
+
+    final String TAG = "DetailTrendingActivity";
     TextView tvDetail;
+
+
+    //declare firebase
+    private FirebaseAuth mFirebaseAuth;
+
+    //setting up firebase
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
+
+    // Implementing firebase database
+
+
+
+
+
 
     @SuppressLint("DefaultLocale")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_trending);
+
+
+        //reference to the database
+
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference("posts");
+
+
+        context = getApplicationContext();
 
         tvDetailTitle = findViewById(R.id.tvDetailTitle);
         ivDetailImage = findViewById(R.id.ivDetailImage);
@@ -57,6 +88,7 @@ public class DetailTrendingActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
+
 //        Log.i("showId", "id is " + id);
 //        tvDetail.setText(id);
 //        tvDetail.setText("https://api.spoonacular.com/recipes/" + id + "/information");
@@ -71,6 +103,8 @@ public class DetailTrendingActivity extends AppCompatActivity {
 //             creating async object
         AsyncHttpClient client = new AsyncHttpClient();
         JSONObject jsonObject = new JSONObject();
+
+
 
 
 //fetching the API with client.get
@@ -106,7 +140,18 @@ public class DetailTrendingActivity extends AppCompatActivity {
 //                    URL req = new URL(imageUrl);
 //                    Bitmap mIcon_val = BitmapFactory.decodeStream(req.openConnection().getInputStream());
 //                    ivDetailImage.setImageBitmap(mIcon_val);
-//                    Glide.with(context).load(imageUrl).into(ivDetailImage);
+                    Glide.with(DetailTrendingActivity.context).load(imageUrl).into(ivDetailImage);
+
+
+
+                    //when a user views an item, store that data to the database
+                    //setup the field you want in the database
+                    UserProfileStore userProfileStore =  new UserProfileStore(id, title, imageUrl, instructions);
+
+                    // store the data in the database
+
+                    reference.child(id).setValue(userProfileStore);
+
 
 
 

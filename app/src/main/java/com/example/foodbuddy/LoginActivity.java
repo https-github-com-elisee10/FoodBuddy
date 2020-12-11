@@ -134,11 +134,17 @@ public class LoginActivity extends AppCompatActivity {
 
                         String userEmailFromDatabase = dataSnapshot.child(userNameEntered).child("email").getValue(String.class);
                         Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                        i.putExtra("userName", usernameFromDatabase);
-                        i.putExtra("password", passFromDatabase);
-                        i.putExtra("email", userEmailFromDatabase);
+
+//                        i.putExtra("password", passFromDatabase);
+//                        i.putExtra("email", userEmailFromDatabase);
 
                         startActivity(i);
+
+
+//                        //send the userName to DetailTrendingActivity
+//                        Intent intent = new Intent(getApplicationContext(), DetailTrendingActivity.class);
+//                        i.putExtra("userName", usernameFromDatabase);
+
 
                     } else {
                         mEtPassword.setError("wrong pass");

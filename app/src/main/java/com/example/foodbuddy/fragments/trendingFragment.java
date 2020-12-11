@@ -21,6 +21,9 @@ import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.foodbuddy.R;
 import com.example.foodbuddy.Recipe;
 import com.example.foodbuddy.RecipeAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,6 +35,9 @@ import java.util.Random;
 
 
 public class trendingFragment extends Fragment {
+
+
+
 
     //API RELATED
 
@@ -103,6 +109,13 @@ public class trendingFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+
+
+
+
+
 
         String NOW_PLAYING_URL = "https://api.spoonacular.com/recipes/search?cuisine=" + chooseCuisine[randomNumber] + "&number=20&apiKey=7e4bf9cab7ab42b1aa7d886374bf0b51";
 
