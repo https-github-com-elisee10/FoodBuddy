@@ -81,6 +81,7 @@ public class DetailTrendingActivity extends AppCompatActivity {
         tvInstructions = findViewById(R.id.tvInstructions);
 //
 //
+        //
 //        get id sent from the recipe class
 //        Recipe recipe = Parcels.unwrap(getIntent().getParcelableExtra("recipe"));
 //
