@@ -3,7 +3,7 @@ package com.example.foodbuddy;
 public class Profile {
 
     //declaring these objects to hold the title, path and overview from the movie api
-    String profileImage, profileTitle, profileInstruction, profileId ;
+    private String userImage, userTitle, userInstruction, profileId ;
 
     //this is the constructor we passed the data from mainactivity class
 
@@ -26,10 +26,10 @@ public Profile(){
 }
 
 
-    public Profile(String profileImage, String profileTitle, String profileInstruction, String profileId) {
-        this.profileImage = profileImage;
-        this.profileTitle = profileTitle;
-        this.profileInstruction = profileInstruction;
+    public Profile(String userImage, String userTitle, String userInstruction, String profileId) {
+        this.userImage = userImage;
+        this.userTitle = userTitle;
+        this.userInstruction = userInstruction;
         this.profileId = profileId;
     }
 
@@ -47,45 +47,48 @@ public Profile(){
 //        return profileRecipes;
 //    }
 
+//    public void setProfileImage(String userImage){
+//
+//        this.userImage = userImage;
+//    }
+
+
+
     public String getProfileImage() {
-        return profileImage;
+        return userImage;
     }
 
-    public void setProfileImage(String profileImage){
-
-    this.profileImage = profileImage;
-    }
 
 
     public String getProfileTitle() {
-        return profileTitle;
+        return userTitle;
     }
 
 
-    public void setProfileTitle(String profileTitle){
-
-        this.profileTitle = profileTitle;
-    }
+//    public void setProfileTitle(String userTitle){
+//
+//        this.userTitle = userTitle;
+//    }
 
 
     public String getprofileInstruction() {
-        return profileInstruction;
+        return userInstruction;
     }
 
 
-    public void setProfileInstruction(String profileInstruction){
-
-        this.profileInstruction = profileInstruction;
-    }
+//    public void setProfileInstruction(String userInstruction){
+//
+//        this.userInstruction = userInstruction;
+//    }
 
 
     public String getprofileId(){ return profileId; }
 
-
-    public void setProfileId(String profileId){
-
-        this.profileId = profileId;
-    }
+//
+//    public void setProfileId(String profileId){
+//
+//        this.profileId = profileId;
+//    }
 
 
 }

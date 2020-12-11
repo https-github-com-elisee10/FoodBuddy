@@ -83,26 +83,33 @@ public class profileFragment extends Fragment {
 
 
                     Profile profileData = itemSnapshot.getValue(Profile.class);
+////
+//
+//                    assert profileData != null;
+//                    String profileImage = profileData.getProfileImage();
+//                    String profileTitle = profileData.getProfileTitle();
+//                    String profileInstruction = profileData.getprofileInstruction();
+//                    String profileId = profileData.getprofileId();
 
-                    String profileImage = profileData.getProfileImage();
-                    String profileTitle = profileData.getProfileTitle();
-                    String profileInstruction = profileData.getprofileInstruction();
-                    String profileId = profileData.getprofileId();
-                    Profile items = new Profile(profileImage, profileTitle, profileInstruction, profileId);
-//                    productCategoryList.add(fire);
 
-//                    Log.i("data" , "is "+  profileData);
-                    //add all the data to profileRecipe
+//                    Profile items = new Profile(profileImage, profileTitle, profileInstruction, profileId);
 
-                    profileRecipe.add(items);
+
+//                    Log.i("data" , "is "+  profileData.getprofileId());
+
+//                   add all the data to profileRecipe, profileData contains individual id and we can parse it using the getter methods
+
+                    profileRecipe.add(profileData);
+
+
 
                 }
 
-                Log.i("data" , "is "+  profileRecipe);
+
 
                 profileAdapter.notifyDataSetChanged();
 
-
+//                Log.i("data" , "is "+  profileRecipe);
 
             }
 
