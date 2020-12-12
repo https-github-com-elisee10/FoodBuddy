@@ -15,9 +15,9 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/profile"
-        android:icon="@drawable/ic_baseline_person_24"
-        android:title="Profile"
+        android:id="@+id/Jokes"
+        android:icon="@drawable/ic_baseline_emoji_emotions_24"
+        android:title="Jokes"
         app:showAsAction="always" />
 
 </menu>

@@ -28,6 +28,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class searchFragment extends Fragment {
 
@@ -36,6 +37,22 @@ public class searchFragment extends Fragment {
     List<SearchItem> searchItems;
     public String RECIPE_URL, search;
     public static final String TAG = "searchFragment";
+    String[] cuisine = {
+            "chicken",
+            "icecream",
+            "mutton",
+            "gram",
+            "mushroom",
+            "peas",
+            "carrot",
+            "turkey",
+            "beef",
+            "goat",
+            "asparagus"
+
+    };
+    Random random = new Random();
+    int randomNumber = random.nextInt(cuisine.length);
 
     //API RELATED
 
@@ -67,12 +84,8 @@ public class searchFragment extends Fragment {
 
         //user searched item name is put in the search string
 
-        //lets hardcode chicken for now
 
-        search = "chicken";
-
-
-        RECIPE_URL = "https://api.spoonacular.com/recipes/search?query=" + search + "&number=20&apiKey=7e4bf9cab7ab42b1aa7d886374bf0b51";
+        RECIPE_URL = "https://api.spoonacular.com/recipes/search?query=" + cuisine[randomNumber] + "&number=20&apiKey=7e4bf9cab7ab42b1aa7d886374bf0b51";
         //creating async object
         AsyncHttpClient client = new AsyncHttpClient();
 //

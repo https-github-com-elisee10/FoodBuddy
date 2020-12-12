@@ -10,19 +10,25 @@
     <TextView
         android:id="@+id/tvDetailTitle"
         android:layout_width="match_parent"
-        android:layout_height="53dp"
+        android:layout_height="64dp"
         android:text="Crispy chips"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="24sp" />
 
     <ImageView
         android:id="@+id/ivDetailImage"
         android:layout_width="match_parent"
-        android:layout_height="199dp"
+        android:layout_height="203dp"
+        android:scaleType="fitXY"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvInstructions"
         android:layout_width="match_parent"
-        android:layout_height="367dp"
-        android:text="TextView" />
+        android:layout_height="330dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#5AADD3"
+        android:textSize="18sp" />
 </LinearLayout>

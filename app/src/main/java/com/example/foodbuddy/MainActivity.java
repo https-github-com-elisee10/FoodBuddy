@@ -38,7 +38,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
-    private Button btn_logout;
+//    private Button btn_logout;
     private BottomNavigationView bottomNavigationView;
     final FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 //            e.printStackTrace();
 //        }
 
-        btn_logout = findViewById(R.id.btnLogOut);
+//        btn_logout = findViewById(R.id.btnLogOut);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
 
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment;
                 switch (item.getItemId()) {
-                    case R.id.profile:
+                    case R.id.Jokes:
                         fragment = new profileFragment();
                         break;
                     case R.id.trending:
@@ -139,22 +139,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //set the profile to be default selection
-        bottomNavigationView.setSelectedItemId(R.id.profile);
+        bottomNavigationView.setSelectedItemId(R.id.Jokes);
 
 
 //
-        btn_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                FirebaseAuth.getInstance().signOut();
-
-                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
-    }
+//        btn_logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                FirebaseAuth.getInstance().signOut();
+//
+//                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+//                startActivity(i);
+//                finish();
+//            }
+//        });
+//    }
 
 //
 //    //open the json file from local
@@ -185,4 +185,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+}
 }

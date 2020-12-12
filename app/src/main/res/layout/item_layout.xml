@@ -18,14 +18,15 @@
     <TextView
         android:id="@+id/tvTrendingTitle"
         android:layout_width="wrap_content"
-        android:layout_height="76dp"
+        android:layout_height="71dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="11dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="7dp"
+        android:layout_marginEnd="14dp"
         android:layout_toEndOf="@+id/ivTrendingImage"
-        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         tools:text="Pizza" />
 
     <TextView
@@ -38,6 +39,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="7dp"
         android:layout_toEndOf="@+id/ivTrendingImage"
+        android:textColor="#FFFFFF"
         android:textStyle="bold"
         tools:text="20" />
 
@@ -51,6 +53,7 @@
         android:layout_marginStart="176dp"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="8dp"
-        android:text="Minutes" />
+        android:text="Minutes"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>
