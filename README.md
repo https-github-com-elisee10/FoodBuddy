@@ -37,28 +37,27 @@ Additionally they user will have a shooping list note section for reminding them
 * [x] User can login
 * [x] User can see three navigation buttons
 * [x] Each navigation button contains search bar, random food recipe and profile
-* [x] User can logut
-* [User can search for a recipe]
-* [User can click search button]
-* [User can click recipe for detail]
+* [x] User can logout
+* [x] User can click recipe for detail
 * [x] User can see varieties of recipies
 * [x] User can see random food recipes
-* [User can see a search bar at the top]
-* [User can type in food name]
-* [User can click search button]
 * [x] User can see the title, image and description of items
 * [x] User can automatically see random recipes
 * [x] User can click on the recipes to see detail screen
-* [User can see a detail page on the recipe]
-* [User can see their own profile]
-* [User can save their favorite recipe]
-* [User can see the recipe for the item in detailed view] 
+* [x] User can see a detail page on the recipe
+* [x] User can see random jokes
+* [x] User can see the recipe for the item in detailed view
 
 **Optional Nice-to-have Stories**
 
 * [User can add their own recipes] 
 * [User can upload thier vides on how to make recipes]
 * [User can like and share other peoples recipe]
+* [User can search for a recipe]
+* [User can click search button]
+* [User can type in food name]
+* [User can save their favorite recipe]
+
 
 ## Video Walkthrough
 
