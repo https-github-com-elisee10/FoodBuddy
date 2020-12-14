@@ -84,7 +84,8 @@ Here's a walkthrough of implemented user stories:
 
 * Final User Story 
 
-<img src='https://www.youtube.com/watch?v=TwCK56mBrNs&feature=youtu.be" title=' App Video Demo' width='' alt='Demo' />
+                                                                                                                   
+[App Demo Video](https://www.youtube.com/watch?v=TwCK56mBrNs&feature=youtu.be)                                                                                                                   
 
 
 
