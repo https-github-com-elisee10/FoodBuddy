@@ -8,7 +8,7 @@ Original App Design Project - README Template
 
 ## Overview
 
-This food recipe app will let users find varieties of food recipes, user can click on the food they would like, and they can view a video or get details on that food.
+This food recipe app will let users find varieties of food recipes, user can click on the food they would like, and they can view a detailed overview on that food. They can also see random jokes for fun, trending sections shows 28 different cuisine recipes, searchc section shows ingredient recipes.
 
 ### Description
 [Recipe finder app]
@@ -82,6 +82,11 @@ Here's a walkthrough of implemented user stories:
 <img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/sprint3.gif' title='Video Walkthrough' width='' alt='sprint 3' />
 
 
+
+* Sprint 4
+
+<img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/sprint4.gif' title='Video Walkthrough' width='' alt='sprint 4' />
+
 * Final User Story 
 
                                                                                                                    
@@ -102,18 +107,13 @@ Here's a walkthrough of implemented user stories:
     * User can click on register button
     
 * Home Screen
-    * User can search for a recipe
-    * User can click search button
     * User can click recipe for detail
     * User can see varieties of recipies
     * User can see random food recipes
     * User can see three navigation buttons
-    * Each navigation button contains search bar, random food recipe and profile
+    * Each navigation button contains search bar, random food recipe and jokes
 
 * Search Screen
-    * User can see a search bar at the top
-    * User can type in food name
-    * User can click search button
     * User can see varities of recipe 
     * User can see the title, image and description of items
     * User can click the items to see a detailed view
@@ -123,9 +123,9 @@ Here's a walkthrough of implemented user stories:
     * User can click on the recipes
     * User can see a detail page on the recipe
 
-* Profile Screen
-    * User can see their own profile
-    * User can save their favorite recipe
+* Jokes Screen
+    * User can see jokes
+    * User can generate random jokes
     
 * Detail Screen
     * User can click an item to see the details
