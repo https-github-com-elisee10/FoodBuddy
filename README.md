@@ -82,6 +82,12 @@ Here's a walkthrough of implemented user stories:
 <img src='https://github.com/https-github-com-elisee10/FoodBuddy/blob/main/sprint3.gif' title='Video Walkthrough' width='' alt='sprint 3' />
 
 
+* Final User Story 
+
+<img src='https://www.youtube.com/watch?v=TwCK56mBrNs&feature=youtu.be" title=' App Video Demo' width='' alt='Demo' />
+
+
+
 
 ### 2. Screen Archetypes
 
