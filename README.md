@@ -48,7 +48,7 @@ Additionally they user will have a shooping list note section for reminding them
 * [x] User can see random jokes
 * [x] User can see the recipe for the item in detailed view
 
-**Optional Nice-to-have Stories**
+**Optional Nice-to-have Stories[Strectch goals]**
 
 * [User can add their own recipes] 
 * [User can upload thier vides on how to make recipes]
